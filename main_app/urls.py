@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.Home.as_view(), name="home"),
     path('about/', views.About.as_view(), name="about"),
     path('models/', views.ModelList.as_view(), name="model-list"),
+    path('models/new/', views.Models_Create.as_view(), name="model-create")
 ]

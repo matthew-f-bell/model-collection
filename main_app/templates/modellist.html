@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+    <h1>{{header}}</h1>
+
+    <a href="{% url 'model-create' %}">Add Model</a>
+    <form action="">
+        <div>
+            <input type="text" name="name" placeholder="name" />
+            <input type="submit" value="search" />
+        </div>
+        <a href="{% url 'model-list' %}">Clear Search</a>
+    </form>
+    
     <h1>Our Models:</h1>
     {% for model in models %}
-    <h3>Brand: {{model.brand}}</h3>
+    <img src="{{model.img}}" alt="{{model.name}}">
     <h3>Name: {{model.name}}</h3>
+    <h3>Brand: {{model.brand}}</h3>
     <h3>Grade: {{model.grade}}</h3>
     {% endfor %}
 {% endblock %}
