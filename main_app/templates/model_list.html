@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{header}}</h1>
+
+    <a href="{% url 'model_create' %}">Add Model</a>
+    <form>
+        <div>
+            <input type="text" name="name" placeholder="name" />
+            <input type="submit" value="Search" />
+        </div>
+        <a href="{% url 'model_list' %}">Clear Search</a>
+    </form>
+    
+    <h1>Our Models:</h1>
+    {% for figure in figures %}
+    <img src="{{figure.img}}" alt="{{figure.name}}">
+    <h3>Name: <a href="{% url 'model_detail' figure.pk %}">{{figure.name}}</a></h3>
+    <h3>Brand: {{figure.brand}}</h3>
+    <h3>Grade: {{figure.grade}}</h3>
+    <p>Owned or Built by:
+        <a href="user/{{ figure.user.username }}">{{ figure.user.username }}</a>
+    </p>
+    {% endfor %}
+{% endblock %}

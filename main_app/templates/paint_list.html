@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Paint List</h1>
+
+    {% for paint in paints %}
+        <div>
+            <a href="{% url 'paint_detail' paint.id %}">
+                <div>
+                    <span>{{ paint.color }}</span>
+                    <p>Type of Paint: {{ paint.paint_type }}</p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}

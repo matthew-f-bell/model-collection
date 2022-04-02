@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Are you sure you want to delete {{figure.name}}?</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <div>
+        <!-- confirm delete -->
+        <input type="submit" value="Confirm" />
+        <!-- Redirect on cancel -->
+        <a href="{% url 'model_detail' figure.pk %}">Cancel</a>
+    </div>
+</form>
+
+{% endblock %}

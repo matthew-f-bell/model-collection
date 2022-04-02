@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Paint Details</h1>
+
+    <div>
+        <div>
+            <span>{{ paint.color }}</span>
+            <p>Type of Paint: {{ paint.paint_type }}</p>
+        </div>
+        <div>
+            <a href="{% url 'paint_update' paint.id %}">Update</a>
+            <a href="{% url 'paint_delete' paint.id %}">Update</a>
+        </div>
+    </div>
+{% endblock %}

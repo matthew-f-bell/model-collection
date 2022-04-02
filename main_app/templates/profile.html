@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ username }}'s Collection:</h1>
+
+{% for figure in figures %}
+<a href="/models/{{ figure.id }}">
+    <h3>{{ figure.name }}</h3>
+</a>
+{% endfor %}
+
+{% endblock %}

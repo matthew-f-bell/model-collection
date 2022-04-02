@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Delete This Paint</h1>
+
+    <h4>Are you sure you want to delete <strong>{{ paint }}</strong>?</h4>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm">
+        <a href="{% url 'paint_show' paint.id %}">Cancel</a>
+    </form>
+{% endblock %}

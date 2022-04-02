@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <img src="{{figure.img}}" alt="{{figure.name}}" />
+    </div>
+    <div>
+        <h1>{{figure.name}}</h1>
+    </div>
+    <div>
+        <h3>Brand: {{figure.brand}}</h3>
+        <h3>Grade: {{figure.grade}}</h3>
+        <p>Owned or Built by:
+            <a href="user/{{ figure.user.username }}">{{ figure.user.username }}</a>
+        </p>
+    </div>
+    <div>
+        <a href="{% url 'model_update' figure.pk %}">Update</a>
+        <a href="{% url 'model_delete' figure.pk %}">Delete</a>
+    </div>
+{% endblock %}
